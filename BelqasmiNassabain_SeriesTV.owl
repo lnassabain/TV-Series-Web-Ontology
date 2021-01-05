@@ -494,6 +494,10 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
     </SubClassOf>
     <DisjointClasses>
+        <Class IRI="#SeriesNotUK"/>
+        <Class IRI="#SeriesUK"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
     </DisjointClasses>
@@ -763,6 +767,9 @@
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/made"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/maker"/>
     </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCountryOfOrigin"/>
+    </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#assignedGenreTo"/>
         <Class IRI="#Genre"/>
@@ -837,11 +844,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isGuestCharacterIn"/>
-        <Class IRI="#GuestCharacter"/>
+        <Class IRI="#Character"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMainCharacterIn"/>
-        <Class IRI="#MainCharacter"/>
+        <Class IRI="#Character"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPlayedBy"/>
@@ -853,7 +860,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isRecurringCharacterIn"/>
-        <Class IRI="#RecurringCharacter"/>
+        <Class IRI="#Character"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isScreenWriterIn"/>
@@ -905,11 +912,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasGuestCharacter"/>
-        <Class IRI="#GuestCharacter"/>
+        <Class IRI="#Character"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasMainCharacter"/>
-        <Class IRI="#MainCharacter"/>
+        <Class IRI="#Character"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasProducer"/>
@@ -917,7 +924,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRecurringCharacter"/>
-        <Class IRI="#RecurringCharacter"/>
+        <Class IRI="#Character"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasScreenWriter"/>
