@@ -637,6 +637,10 @@
         <Class IRI="#Character"/>
         <NamedIndividual IRI="#Zoe_Barnes"/>
     </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#United_Kingdom"/>
+        <NamedIndividual IRI="#United_States"/>
+    </DifferentIndividuals>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCountryOfOrigin"/>
         <NamedIndividual IRI="#House_of_Cards"/>
