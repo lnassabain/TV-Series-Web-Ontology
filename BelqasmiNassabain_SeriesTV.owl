@@ -67,6 +67,9 @@
         <Class IRI="#SFActor"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SFSeries"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ScreenWriter"/>
     </Declaration>
     <Declaration>
@@ -94,6 +97,12 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#assignedGenreTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#genre"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasActor"/>
     </Declaration>
     <Declaration>
@@ -107,6 +116,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasEpisode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGenre"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasGuestCharacter"/>
@@ -229,6 +241,9 @@
         <NamedIndividual IRI="#Horror"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#House_of_Cards"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Italy"/>
     </Declaration>
     <Declaration>
@@ -260,6 +275,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sherlock_Holmes"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Thriller"/>
@@ -306,6 +324,24 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#AllTypeCharacter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Character"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isGuestCharacterIn"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMainCharacterIn"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRecurringCharacterIn"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#CharInspiredByLit"/>
         <ObjectIntersectionOf>
             <Class IRI="#Character"/>
@@ -313,6 +349,66 @@
                 <ObjectProperty IRI="#inspiredBy"/>
                 <Class IRI="#LiteraryDoc"/>
             </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GuestCharacter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Character"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isGuestCharacterIn"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MainCharacter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Character"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMainCharacterIn"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ProlificProducer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Producer"/>
+            <ObjectMinCardinality cardinality="8">
+                <ObjectProperty IRI="#isProducerIn"/>
+                <Class IRI="#Series"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RecurringCharacter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Character"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRecurringCharacterIn"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SFActor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Actor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isActorIn"/>
+                <Class IRI="#SFSeries"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SFSeries"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Series"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasGenre"/>
+                <NamedIndividual IRI="#SF"/>
+            </ObjectHasValue>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -346,10 +442,6 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#AllTypeCharacter"/>
-        <Class IRI="#Character"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Character"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </SubClassOf>
@@ -362,16 +454,8 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GuestCharacter"/>
-        <Class IRI="#Character"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#LiteraryDoc"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MainCharacter"/>
-        <Class IRI="#Character"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PoliticalParty"/>
@@ -382,20 +466,8 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ProlificProducer"/>
-        <Class IRI="#Producer"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecurringCharacter"/>
-        <Class IRI="#Character"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#RepublicanParty"/>
         <Class IRI="#PoliticalParty"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SFActor"/>
-        <Class IRI="#Actor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ScreenWriter"/>
@@ -494,6 +566,10 @@
         <NamedIndividual IRI="#Horror"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Series"/>
+        <NamedIndividual IRI="#House_of_Cards"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Country"/>
         <NamedIndividual IRI="#Italy"/>
     </ClassAssertion>
@@ -538,6 +614,10 @@
         <NamedIndividual IRI="#SF"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Character"/>
+        <NamedIndividual IRI="#Sherlock_Holmes"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Genre"/>
         <NamedIndividual IRI="#Thriller"/>
     </ClassAssertion>
@@ -553,6 +633,20 @@
         <Class IRI="#Character"/>
         <NamedIndividual IRI="#Zoe_Barnes"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountryOfOrigin"/>
+        <NamedIndividual IRI="#House_of_Cards"/>
+        <NamedIndividual IRI="#United_States"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#House_of_Cards"/>
+        <NamedIndividual IRI="#Politics"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#assignedGenreTo"/>
+        <ObjectProperty IRI="#genre"/>
+    </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasActor"/>
         <ObjectProperty IRI="#hasStaffMember"/>
@@ -560,6 +654,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDirector"/>
         <ObjectProperty IRI="#hasStaffMember"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGenre"/>
+        <ObjectProperty IRI="#genre"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasGuestCharacter"/>
@@ -617,6 +715,10 @@
         <ObjectProperty IRI="#plays"/>
         <ObjectProperty IRI="#performance"/>
     </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#assignedGenreTo"/>
+        <ObjectProperty IRI="#hasGenre"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasActor"/>
         <ObjectProperty IRI="#isActorIn"/>
@@ -662,6 +764,10 @@
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/maker"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#assignedGenreTo"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasActor"/>
         <Class IRI="#Series"/>
     </ObjectPropertyDomain>
@@ -678,12 +784,16 @@
         <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasGuestCharacter"/>
+        <ObjectProperty IRI="#hasGenre"/>
         <Class IRI="#Series"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGuestCharacter"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasMainCharacter"/>
-        <Class IRI="#Series"/>
+        <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasProducer"/>
@@ -691,7 +801,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRecurringCharacter"/>
-        <Class IRI="#Series"/>
+        <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasScreenWriter"/>
@@ -770,6 +880,10 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Group"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#assignedGenreTo"/>
+        <Class IRI="#Series"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasActor"/>
         <Class IRI="#Actor"/>
     </ObjectPropertyRange>
@@ -784,6 +898,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEpisode"/>
         <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Genre"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasGuestCharacter"/>
@@ -827,11 +945,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isGuestCharacterIn"/>
-        <Class IRI="#Series"/>
+        <Class IRI="#Season"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMainCharacterIn"/>
-        <Class IRI="#Series"/>
+        <Class IRI="#Season"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPlayedBy"/>
@@ -843,7 +961,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isRecurringCharacterIn"/>
-        <Class IRI="#Series"/>
+        <Class IRI="#Season"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isScreenWriterIn"/>
@@ -901,6 +1019,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SFActor</IRI>
         <Literal>ActeurSF: acteurs qui jouent dans des séries de science fiction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SFSeries</IRI>
+        <Literal>Series science fiction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
