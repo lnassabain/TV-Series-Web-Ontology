@@ -6,23 +6,29 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/majstorleo/ontologies/2021/0/BelqasmiNassabain_SeriesTV.owl">
-    <Prefix name="" IRI="http://www.semanticweb.org/majstorleo/ontologies/2021/0/untitled-ontology-21"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/majstorleo/ontologies/2021/0/BelqasmiNassabain_SeriesTV.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Person"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Actor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#AllTypeCharacter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CharInspiredByLit"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Character"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CharacterAllType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CharacterInspirbyLW"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Country"/>
@@ -40,9 +46,6 @@
         <Class IRI="#Genre"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GuestCharacter"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#LiteraryDoc"/>
     </Declaration>
     <Declaration>
@@ -56,9 +59,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ProlificProducer"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RecurringCharacter"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RepublicanParty"/>
@@ -88,13 +88,49 @@
         <Class IRI="#TelevisualDoc"/>
     </Declaration>
     <Declaration>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://xmlns.com/foaf/0.1/Group"/>
     </Declaration>
     <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Project"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ActorCharacter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Character"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#CharcterSerie"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Episode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasCharacter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#LiteraryWork"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Season"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#assignedGenreTo"/>
@@ -133,13 +169,16 @@
         <ObjectProperty IRI="#hasRecurringCharacter"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasRelatedCharacter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRelatedRessource"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasScreenWriter"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSeason"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasStaffMember"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#inspiredBy"/>
@@ -149,6 +188,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isCharacterIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCharacterOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isDirectorIn"/>
@@ -172,6 +214,9 @@
         <ObjectProperty IRI="#isRecurringCharacterIn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isRelatedRessource"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isScreenWriterIn"/>
     </Declaration>
     <Declaration>
@@ -181,10 +226,16 @@
         <ObjectProperty IRI="#isStaffMemberIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#performance"/>
+        <ObjectProperty IRI="#numberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#numberOfseason"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#plays"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#serie"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/made"/>
@@ -194,6 +245,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/member"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#number"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://xmlns.com/foaf/0.1/name"/>
@@ -226,6 +280,12 @@
         <NamedIndividual IRI="#Game_of_Thrones"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Gandal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gandel1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Gerald_McRaney"/>
     </Declaration>
     <Declaration>
@@ -236,6 +296,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#History"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hobbit"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Horror"/>
@@ -277,7 +340,16 @@
         <NamedIndividual IRI="#SF"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Season1of_Hobbit"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Sherlock_Holmes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The100"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_brige_of_kazadum"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Thriller"/>
@@ -292,25 +364,7 @@
         <NamedIndividual IRI="#Zoe_Barnes"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://schema.org/Person"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://schema.org/CreativeWork"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://xmlns.com/foaf/0.1/Project"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <NamedIndividual IRI="#ian_Mckellen"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
@@ -324,40 +378,22 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#AllTypeCharacter"/>
+        <Class IRI="#CharacterAllType"/>
         <ObjectIntersectionOf>
             <Class IRI="#Character"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#isGuestCharacterIn"/>
-                <Class IRI="#Season"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isMainCharacterIn"/>
-                <Class IRI="#Season"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isRecurringCharacterIn"/>
-                <Class IRI="#Season"/>
+                <Class IRI="#Series"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#CharInspiredByLit"/>
+        <Class IRI="#CharacterInspirbyLW"/>
         <ObjectIntersectionOf>
             <Class IRI="#Character"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#inspiredBy"/>
+                <ObjectProperty IRI="#isCharacterIn"/>
                 <Class IRI="#LiteraryDoc"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#GuestCharacter"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Character"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isGuestCharacterIn"/>
-                <Class IRI="#Season"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -365,10 +401,10 @@
         <Class IRI="#MainCharacter"/>
         <ObjectIntersectionOf>
             <Class IRI="#Character"/>
-            <ObjectSomeValuesFrom>
+            <ObjectMinCardinality cardinality="1">
                 <ObjectProperty IRI="#isMainCharacterIn"/>
-                <Class IRI="#Season"/>
-            </ObjectSomeValuesFrom>
+                <Class IRI="#Series"/>
+            </ObjectMinCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -379,16 +415,6 @@
                 <ObjectProperty IRI="#isProducerIn"/>
                 <Class IRI="#Series"/>
             </ObjectMinCardinality>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#RecurringCharacter"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Character"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isRecurringCharacterIn"/>
-                <Class IRI="#Season"/>
-            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -446,6 +472,14 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#CharacterAllType"/>
+        <Class IRI="#Character"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CharacterInspirbyLW"/>
+        <Class IRI="#Character"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DemocraticParty"/>
         <Class IRI="#PoliticalParty"/>
     </SubClassOf>
@@ -456,6 +490,10 @@
     <SubClassOf>
         <Class IRI="#LiteraryDoc"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MainCharacter"/>
+        <Class IRI="#Character"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PoliticalParty"/>
@@ -550,6 +588,14 @@
         <NamedIndividual IRI="#Game_of_Thrones"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Character"/>
+        <NamedIndividual IRI="#Gandal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Character"/>
+        <NamedIndividual IRI="#Gandel1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Actor"/>
         <NamedIndividual IRI="#Gerald_McRaney"/>
     </ClassAssertion>
@@ -564,6 +610,10 @@
     <ClassAssertion>
         <Class IRI="#Genre"/>
         <NamedIndividual IRI="#History"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Series"/>
+        <NamedIndividual IRI="#Hobbit"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Genre"/>
@@ -618,8 +668,20 @@
         <NamedIndividual IRI="#SF"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#Season1of_Hobbit"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Character"/>
         <NamedIndividual IRI="#Sherlock_Holmes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Series"/>
+        <NamedIndividual IRI="#The100"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LiteraryDoc"/>
+        <NamedIndividual IRI="#The_brige_of_kazadum"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Genre"/>
@@ -637,10 +699,54 @@
         <Class IRI="#Character"/>
         <NamedIndividual IRI="#Zoe_Barnes"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Actor"/>
+        <NamedIndividual IRI="#ian_Mckellen"/>
+    </ClassAssertion>
     <DifferentIndividuals>
         <NamedIndividual IRI="#United_Kingdom"/>
         <NamedIndividual IRI="#United_States"/>
     </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isActorIn"/>
+        <NamedIndividual IRI="#Elizabeth_Marvel"/>
+        <NamedIndividual IRI="#The100"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isCharacterIn"/>
+        <NamedIndividual IRI="#Gandal"/>
+        <NamedIndividual IRI="#The_brige_of_kazadum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGuestCharacterIn"/>
+        <NamedIndividual IRI="#Gandal"/>
+        <NamedIndividual IRI="#Hobbit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isMainCharacterIn"/>
+        <NamedIndividual IRI="#Gandal"/>
+        <NamedIndividual IRI="#Hobbit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRecurringCharacterIn"/>
+        <NamedIndividual IRI="#Gandal"/>
+        <NamedIndividual IRI="#Hobbit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isCharacterIn"/>
+        <NamedIndividual IRI="#Gandel1"/>
+        <NamedIndividual IRI="#The_brige_of_kazadum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#HasCharacter"/>
+        <NamedIndividual IRI="#Hobbit"/>
+        <NamedIndividual IRI="#Gandal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRelatedRessource"/>
+        <NamedIndividual IRI="#Hobbit"/>
+        <NamedIndividual IRI="#The_brige_of_kazadum"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCountryOfOrigin"/>
         <NamedIndividual IRI="#House_of_Cards"/>
@@ -651,17 +757,58 @@
         <NamedIndividual IRI="#House_of_Cards"/>
         <NamedIndividual IRI="#Politics"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isSeasonIn"/>
+        <NamedIndividual IRI="#Season1of_Hobbit"/>
+        <NamedIndividual IRI="#Hobbit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#The100"/>
+        <NamedIndividual IRI="#SF"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isActorIn"/>
+        <NamedIndividual IRI="#ian_Mckellen"/>
+        <NamedIndividual IRI="#Hobbit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#plays"/>
+        <NamedIndividual IRI="#ian_Mckellen"/>
+        <NamedIndividual IRI="#Gandal"/>
+    </ObjectPropertyAssertion>
+    <NegativeObjectPropertyAssertion>
+        <ObjectProperty IRI="#isCharacterIn"/>
+        <NamedIndividual IRI="#Gandel1"/>
+        <NamedIndividual IRI="#Gandal"/>
+    </NegativeObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Character"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#HasCharacter"/>
+        <ObjectProperty IRI="#serie"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Season"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#assignedGenreTo"/>
         <ObjectProperty IRI="#genre"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasActor"/>
-        <ObjectProperty IRI="#hasStaffMember"/>
+        <ObjectProperty IRI="#serie"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDirector"/>
-        <ObjectProperty IRI="#hasStaffMember"/>
+        <ObjectProperty IRI="#serie"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEpisode"/>
+        <ObjectProperty IRI="#serie"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasGenre"/>
@@ -677,35 +824,59 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasProducer"/>
-        <ObjectProperty IRI="#hasStaffMember"/>
+        <ObjectProperty IRI="#serie"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRecurringCharacter"/>
         <ObjectProperty IRI="#hasCharacter"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRelatedCharacter"/>
+        <ObjectProperty IRI="#LiteraryWork"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRelatedRessource"/>
+        <ObjectProperty IRI="#serie"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasScreenWriter"/>
-        <ObjectProperty IRI="#hasStaffMember"/>
+        <ObjectProperty IRI="#serie"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSeason"/>
+        <ObjectProperty IRI="#serie"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isActorIn"/>
         <ObjectProperty IRI="#isStaffMemberIn"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCharacterIn"/>
+        <ObjectProperty IRI="#Character"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCharacterOf"/>
+        <ObjectProperty IRI="#Character"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isDirectorIn"/>
         <ObjectProperty IRI="#isStaffMemberIn"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isEpisodeIn"/>
+        <ObjectProperty IRI="#Episode"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isGuestCharacterIn"/>
-        <ObjectProperty IRI="#isCharacterIn"/>
+        <ObjectProperty IRI="#CharcterSerie"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isMainCharacterIn"/>
-        <ObjectProperty IRI="#isCharacterIn"/>
+        <ObjectProperty IRI="#CharcterSerie"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isPlayedBy"/>
-        <ObjectProperty IRI="#performance"/>
+        <ObjectProperty IRI="#ActorCharacter"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProducerIn"/>
@@ -713,16 +884,40 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isRecurringCharacterIn"/>
-        <ObjectProperty IRI="#isCharacterIn"/>
+        <ObjectProperty IRI="#CharcterSerie"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRelatedRessource"/>
+        <ObjectProperty IRI="#LiteraryWork"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isScreenWriterIn"/>
         <ObjectProperty IRI="#isStaffMemberIn"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#plays"/>
-        <ObjectProperty IRI="#performance"/>
+        <ObjectProperty IRI="#isSeasonIn"/>
+        <ObjectProperty IRI="#Season"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#numberOf"/>
+        <ObjectProperty IRI="#Episode"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#numberOfseason"/>
+        <ObjectProperty IRI="#Season"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#plays"/>
+        <ObjectProperty IRI="#ActorCharacter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#serie"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#HasCharacter"/>
+        <ObjectProperty IRI="#isCharacterOf"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#assignedGenreTo"/>
         <ObjectProperty IRI="#hasGenre"/>
@@ -756,6 +951,10 @@
         <ObjectProperty IRI="#isRecurringCharacterIn"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasRelatedCharacter"/>
+        <ObjectProperty IRI="#isCharacterIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasScreenWriter"/>
         <ObjectProperty IRI="#isScreenWriterIn"/>
     </InverseObjectProperties>
@@ -768,12 +967,80 @@
         <ObjectProperty IRI="#plays"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#isRelatedRessource"/>
+        <ObjectProperty IRI="#isRelatedRessource"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/made"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/maker"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasCountryOfOrigin"/>
     </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Character"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasGuestCharacter"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasMainCharacter"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasRecurringCharacter"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isGuestCharacterIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isMainCharacterIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isPlayedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isRecurringCharacterIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isSeasonIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#plays"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Character"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasGuestCharacter"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasMainCharacter"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasRecurringCharacter"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isGuestCharacterIn"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isMainCharacterIn"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isPlayedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isRecurringCharacterIn"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isSeasonIn"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#plays"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasCharacter"/>
+        <Class IRI="#Series"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#assignedGenreTo"/>
         <Class IRI="#Genre"/>
@@ -815,6 +1082,18 @@
         <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRelatedCharacter"/>
+        <Class IRI="#LiteraryDoc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRelatedRessource"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRelatedRessource"/>
+        <Class IRI="#Series"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasScreenWriter"/>
         <Class IRI="#Series"/>
     </ObjectPropertyDomain>
@@ -837,6 +1116,14 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isActorIn"/>
         <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCharacterIn"/>
+        <Class IRI="#Character"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCharacterOf"/>
+        <Class IRI="#Character"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isDirectorIn"/>
@@ -867,11 +1154,23 @@
         <Class IRI="#Character"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRelatedRessource"/>
+        <Class IRI="#LiteraryDoc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isScreenWriterIn"/>
         <Class IRI="#ScreenWriter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSeasonIn"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#numberOf"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#numberOfseason"/>
         <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -891,6 +1190,10 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Group"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasCharacter"/>
+        <Class IRI="#Character"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#assignedGenreTo"/>
         <Class IRI="#Series"/>
     </ObjectPropertyRange>
@@ -931,6 +1234,14 @@
         <Class IRI="#Character"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRelatedCharacter"/>
+        <Class IRI="#Character"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRelatedRessource"/>
+        <Class IRI="#LiteraryDoc"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasScreenWriter"/>
         <Class IRI="#ScreenWriter"/>
     </ObjectPropertyRange>
@@ -944,6 +1255,14 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isActorIn"/>
+        <Class IRI="#Series"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCharacterIn"/>
+        <Class IRI="#LiteraryDoc"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCharacterOf"/>
         <Class IRI="#Series"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -975,12 +1294,30 @@
         <Class IRI="#Season"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRelatedRessource"/>
+        <Class IRI="#Series"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isScreenWriterIn"/>
         <Class IRI="#Series"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isSeasonIn"/>
         <Class IRI="#Series"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#numberOf"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#number"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#numberOfseason"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#number"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#plays"/>
@@ -1012,14 +1349,14 @@
         <Literal>Premiere apparition de Sherlock Holmes</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#AllTypeCharacter</IRI>
-        <Literal>PersonnageTousTypes: personnages qui étaient à des moment differents de la série personnage principal, récurrent et invité</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CharcterSerie</IRI>
+        <Literal>CharacterSeason</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#CharInspiredByLit</IRI>
-        <Literal>PersonnageInspireLitterature: personnages de séries qui sont issus d&apos;une oeuvre litteraire</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CharcterSerie</IRI>
+        <Literal>statuCharacter</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1047,9 +1384,19 @@
         <Literal>SérieAnglaise: séries qui ont pour pays d&apos;origine l&apos;e Royaume Uni</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCharacter</IRI>
+        <Literal>statuOfActor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isActorIn</IRI>
         <Literal>estActeurDans</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isCharacterIn</IRI>
+        <Literal>isRelatedCharacter</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1065,6 +1412,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isScreenWriterIn</IRI>
         <Literal>estScenaristePour</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#numberOf</IRI>
+        <Literal>numberOfEpisode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#serie</IRI>
+        <Literal>Serie</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
